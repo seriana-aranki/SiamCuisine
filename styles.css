@@ -1,0 +1,612 @@
+/*Seriana Aranki*/
+
+/* CSS RESET
+ http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/************GLOBAL STYLES*****************/
+:root {
+    --orange: #FFAB02;
+    --blue: #063A74;
+    --green: #B6D433;
+    --red: #CC1700;
+    --heading-font: 'Massilia', sans-serif;
+    --body-font: 'Urbana', sans-serif;
+}
+h1 {
+    font-family: var(--heading-font);
+    font-weight: 700;
+    color: var(--orange);
+    text-align: center;
+    font-size: 2.25rem;
+    letter-spacing: 0.09rem;
+    margin: 1em;
+}
+body {
+    font-family: var(--body-font);
+    font-weight: 400;
+    font-size: 1rem;
+    letter-spacing: 0.05rem;   
+}
+a {
+    text-decoration: none;
+}
+#menu-button a {
+    background-color: var(--blue);
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.25rem;
+}
+/** insert hamburger nav styles**/
+#menuToggle
+{
+  display: block;
+  position: relative;
+  top: 23px;
+  left: 23px;
+  z-index: 1;
+  margin-bottom: 1em;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle a
+{
+  text-decoration: none;
+  color: #232323;
+  
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover
+{
+  color: #fff;
+}
+
+
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  
+  cursor: pointer;
+  
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  
+  -webkit-touch-callout: none;
+}
+#menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  
+  background: #000;
+  border-radius: 3px;
+  
+  z-index: 1;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+/* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+#menu
+{
+  position: absolute;
+  width: 100%;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  
+  background: var(--green);
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+  
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+  padding: 10px 0;
+  font-size: 1.25rem;
+  text-align:center;
+  margin-right: 1.5em;
+}
+
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+img {
+    width: 21.375rem;
+    height: 13.875rem;
+    object-fit: cover;
+    border-radius: 0.3125rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+h2 {
+    text-align: center;
+    font-size: 2.25rem;
+}
+#menu_button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1em;
+}
+#menu_button a, #menu_page a {
+    background-color: var(--blue);
+    /* width: 7.5rem;
+    height: 2.375rem; */
+    border-radius: 0.3125rem;
+    box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin: 1em;
+    font-family: var(--body-font);
+    color:#fff;
+    font-size: 1.25rem;
+    text-decoration: none;
+    padding: 0.28em 1em;
+}
+#home_about {
+    display:none;
+}
+#hours {
+    width: 21.375rem;
+    height: 20.9375rem;
+    border-radius: 0.625rem;
+    border: 1px solid #000;
+    text-align: center;
+    margin: auto;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+#home_map img {
+    margin-bottom: 2em;
+}
+#backtotop {
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: #fff; /* Set a background color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+  }
+  #backtotop svg {
+    width: 30px;
+    height: 30px;
+  }
+  #backtotop:hover {
+    background-color: var(--blue); /* Add a dark-grey background on hover */
+    fill: #fff;
+  }
+footer {
+    background-color: #000;
+    color: #fff;
+    font-family: var(--heading-font);
+    font-size: 0.875rem;
+    letter-spacing: 0.0175rem;
+    text-align:center;
+
+}
+footer h3 {
+    font-weight: 500;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+footer p, footer address {
+    font-weight: 200;
+    letter-spacing: 0.0175rem;
+    padding: .5em;
+}
+footer svg {
+    height: 43px;
+}
+/*******About page*****/
+#about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#about section {
+    margin-bottom: 1.5rem;
+}
+#about p {
+    font-family: var(--heading-font);
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 0.02rem;
+    margin: .5em 1.5em;
+}
+#about h3, #menu_page h3, #contact h2 {
+    text-align: center;
+    margin: 1em;
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 0.045rem;
+    border-radius: 0.625rem;
+    background: var(--green);
+    padding: 5px;
+}
+/*****Menu page****/
+#menu_tags {
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+#menu_tags::-webkit-scrollbar {
+    width: 10px;
+}
+#menu_tags::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+#menu_tags::-webkit-scrollbar-thumb {
+    background:#313131; 
+    border-radius: 0.625rem;
+  }
+#menu_page figcaption, #menu_page table {
+    margin: 2.5em;
+}
+.menu_description {
+    font-weight: 300;
+    line-height: 1.5;
+}
+#menu_page td {
+    padding-top: 1em;
+} 
+/* #menu_page #bev_table {
+    margin: unset;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+} */
+/****contact page****/
+#contact h3 {
+    font-size: 2em;
+    text-align: center;
+    margin-top: 1em;
+    color: var(--orange);
+}
+form {
+    border: 1px solid black;
+    border-radius: 0.625rem;
+    box-shadow: -5px 5px 10px rgba(0,0,0,.07);;
+    font-family: var(--heading-font);
+    display: block;
+    margin: 1rem auto;
+    padding: 1rem;
+    width: 300px;
+  }
+  
+  fieldset,
+  input,
+  label,
+  textarea {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+  }
+  
+  .required {
+    color: var(--red);
+    display: inline-block;
+    font-size: 1.5em;
+    margin-left: 2px;
+    vertical-align: middle;
+  }
+  
+  label {
+    margin-bottom: 0.1rem;
+  }
+  
+  * + label,
+  fieldset,
+  input[type="submit"] {
+    margin-top: 1rem;
+  }
+  
+  input[type="email"],
+  input[type="tel"],
+  input[type="text"] {
+    border: 1px solid #333;
+    border-radius: 5px;
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+  
+  fieldset {
+    align-items: center;
+    border: 1px solid #333;
+      border-radius: 5px;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr 3fr;
+    padding: 0.25rem 1rem 1rem;
+  }
+  
+  fieldset label {
+    margin: 0;
+  }
+  
+  textarea {
+    border: 1px solid #333;
+    border-radius: 5px;
+    font-size: 1rem;
+    height: 5rem;
+      padding: 0.5rem;
+  }
+  
+  input[type=submit] {
+      background-color: var(--blue);
+    border: 0;
+    border-radius: 5px;
+    color: #FFF;
+    cursor: pointer;
+    margin-left: auto;
+      padding: 0.75em 2rem;
+    transition: background-color 300ms ease;
+      width: fit-content;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #000;
+  }
+  
+  input:error,
+  textarea:error {
+      border-color: var(--red);
+  }
+
+  /******TABLET STYLES*****/
+  @media only screen and (min-width: 500px) {
+    /****home page***/
+    h1 {
+        text-align: left;
+    }
+    #menuToggle input, #menuToggle span {
+        display: none;
+    }
+    #menu {
+        display: flex;
+        margin: 0;
+        background: none;
+        transform: none;
+        transition: none;
+        padding: 0;
+        justify-content: end;
+        width: -webkit-fill-available;
+        top: 5px;
+    }
+    #menu li {
+        background: var(--green);
+        padding: .25em .5em;
+        border-radius: 0.625rem;
+        margin-right: .5em;
+    }
+    #menuToggle {
+        top: 0px;
+        left: 0px;
+    }
+    img {
+        width: 42.375rem;
+        height: 34.875rem;
+    }
+    #home_about {
+        display: block;
+        width: 42.375rem;
+        margin-right: auto;
+        margin-left: auto;
+        border-radius: 0.3125rem;
+        padding-top: 10px;
+    }
+    #about_grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-gap: 2.5em;
+        padding-left: 10px;
+        padding-right: 10px;
+        text-align: center;
+        padding-bottom: 10px;
+        margin-top: .5em;
+    }
+    #about_grid h3 {
+        font-size: 1.5em;
+        margin: .8em 0;
+        background: var(--green);
+        border-radius: 0.3125rem;
+    }
+    #home_about img {
+        width: 10.125rem;
+        height: 9.625rem;
+    }
+    #hours_map {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1em;
+        width: 42.375rem;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    #hours_map img {
+        width: 320px;
+        height: 335px;
+        margin-top: 2em;
+        margin-bottom: 2em;
+    }
+    /**about page*****/
+   #abt_page_grid img {
+    width: 19.125rem;
+    height: 13.625rem;
+   }
+    #chefs, #events, #local {
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    #chefs h3, #events h3, #local h3 {
+        grid-column:1/2;
+        grid-row:1/2;
+        align-content: center;
+    }
+    #chefs p, #events p, #local p {
+        grid-column:1/2;
+        grid-row:2/3;
+    }
+    #chefs img, #events img, #local img {
+        grid-column:2/3;
+        grid-row:1/3;
+    }
+    /***Menu page****/
+    #menu_page table, #menu_page figcaption {
+        width: 42.375rem;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    #menu_page th {
+        display: none;
+    }
+  }
+  @media only screen and (min-width: 770px) {
+    header {
+        width: 58.375rem;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    h1 {
+        font-size: 2.5em;
+    }
+    #menu li {
+        font-size: 1.5em;
+    }
+    img {
+        width: 58.375rem;
+        height: 41.875rem;
+    }
+    #hours_map {
+        width: 58.375rem;
+    }
+    #hours_map img {
+        width: 433px;
+    }
+    #home_about {
+        width: 58.375rem;
+        /* margin-right: auto;
+        margin-left: auto; */
+    }
+    /**menu page**/
+    table {
+        font-size: large;
+    }
+  }
+    
+    
+    
+
