@@ -59,13 +59,19 @@ table {
     --body-font: 'Urbana', sans-serif;
 }
 h1 {
-    font-family: var(--heading-font);
-    font-weight: 700;
-    color: var(--orange);
-    text-align: center;
     font-size: 2.25rem;
-    letter-spacing: 0.09rem;
     margin: 1em;
+}
+
+h1 img {
+  width: 305px;
+  height: 160px;
+  margin-bottom: -33px
+}
+h1 a {
+  display: block;
+  width: 305px;
+  height: 160px;
 }
 body {
     font-family: var(--body-font);
@@ -120,8 +126,8 @@ a {
   
   cursor: pointer;
   
-  opacity: 0; /* hide this */
-  z-index: 2; /* and place it over the hamburger */
+  opacity: 0; 
+  z-index: 2; 
   
   -webkit-touch-callout: none;
 }
@@ -155,10 +161,7 @@ a {
   transform-origin: 0% 100%;
 }
 
-/* 
- * Transform all the slices of hamburger
- * into a crossmark.
- */
+
 #menuToggle input:checked ~ span
 {
   opacity: 1;
@@ -177,10 +180,7 @@ a {
   transform: rotate(-45deg) translate(0, -1px);
 }
 
-/*
- * Make this absolute positioned
- * at the top left of the screen
- */
+
 #menu
 {
   position: absolute;
@@ -192,7 +192,7 @@ a {
   background: var(--green);
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
-  /* to stop flickering of text in safari */
+ 
   
   transform-origin: 0% 0%;
   transform: translate(-100%, 0);
@@ -208,9 +208,7 @@ a {
   margin-right: 1.5em;
 }
 
-/*
- * And let's slide it in from the left
- */
+
 #menuToggle input:checked ~ ul
 {
   transform: none;
@@ -224,6 +222,10 @@ img {
     margin-left: auto;
     margin-right: auto;
 }
+#large_home_img h2 {
+  padding-top: 1em;
+  font-size: 2em
+}
 h2 {
     text-align: center;
     font-size: 2.25rem;
@@ -234,18 +236,41 @@ h2 {
     align-items: center;
     margin: 1em;
 }
+#menu_button #call_to_orderbtn {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  display: inline-flex;
+  align-items: center;
+}
+#call_to_orderbtn svg {
+  width: 30px;
+  padding-right: 9px;
+}
+#menu_button #call_to_orderbtn:hover, #menu_button #call_to_orderbtn svg:hover {
+  background:#333;
+  color:#fff;
+  fill: #fff;
+}
 #menu_button a, #menu_page a {
     background-color: var(--blue);
-    /* width: 7.5rem;
-    height: 2.375rem; */
-    border-radius: 0.3125rem;
-    box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 1.3125rem;
     margin: 1em;
     font-family: var(--body-font);
     color:#fff;
     font-size: 1.25rem;
     text-decoration: none;
     padding: 0.28em 1em;
+}
+#menu_button a:hover, #menu_page a:hover {
+  background-color: #042245;
+}
+#menu_button a:first-child {
+  display:inline-flex;
+}
+#menu_button a:first-child svg {
+  margin-left: 10px;
+  fill: white;
 }
 #home_about {
     display:none;
@@ -267,24 +292,24 @@ h2 {
     margin-bottom: 2em;
 }
 #backtotop {
-    position: fixed; /* Fixed/sticky position */
-    bottom: 20px; /* Place the button at the bottom of the page */
-    right: 30px; /* Place the button 30px from the right */
-    z-index: 99; /* Make sure it does not overlap */
-    border: none; /* Remove borders */
-    outline: none; /* Remove outline */
-    background-color: #fff; /* Set a background color */
-    cursor: pointer; /* Add a mouse pointer on hover */
-    padding: 15px; /* Some padding */
-    border-radius: 10px; /* Rounded corners */
-    font-size: 18px; /* Increase font size */
+    position: fixed; 
+    bottom: 20px; 
+    right: 30px; 
+    z-index: 99; 
+    border: 1px solid black; 
+    outline: none; 
+    background-color: #fff; 
+    cursor: pointer; 
+    padding: 15px; 
+    border-radius: 10px; 
+    font-size: 18px; 
   }
   #backtotop svg {
     width: 30px;
     height: 30px;
   }
   #backtotop:hover {
-    background-color: var(--blue); /* Add a dark-grey background on hover */
+    background-color: var(--orange); 
     fill: #fff;
   }
 footer {
@@ -308,6 +333,9 @@ footer p, footer address {
 }
 footer svg {
     height: 43px;
+}
+footer small {
+  font-style: italic;
 }
 /*******About page*****/
 #about {
@@ -362,13 +390,14 @@ footer svg {
 #menu_page td {
     padding-top: 1em;
 } 
-/* #menu_page #bev_table {
-    margin: unset;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 1em;
-    margin-bottom: 1em;
-} */
+#mainentree2 {
+  display: none;
+}
+#bevs td {
+  padding-right: 6em;
+  padding-left: 5em;
+}
+
 /****contact page****/
 #contact h3 {
     font-size: 2em;
@@ -460,17 +489,20 @@ form {
     background-color: #000;
   }
   
-  input:error,
-  textarea:error {
+  input:invalid,
+  textarea:invalid {
       border-color: var(--red);
   }
 
-  /******TABLET STYLES*****/
+  /***************************************************TABLET STYLES*****/
   @media only screen and (min-width: 500px) {
     /****home page***/
-    h1 {
-        text-align: left;
+    h1 img {
+      position: relative;
+      top: -26px;
+      right: 36px;
     }
+    
     #menuToggle input, #menuToggle span {
         display: none;
     }
@@ -482,8 +514,9 @@ form {
         transition: none;
         padding: 0;
         justify-content: end;
-        width: -webkit-fill-available;
         top: 5px;
+        position: relative;
+        top: 125px;
     }
     #menu li {
         background: var(--green);
@@ -496,8 +529,8 @@ form {
         left: 0px;
     }
     img {
-        width: 42.375rem;
-        height: 34.875rem;
+      width: 37.375rem;
+      height: 22.875rem;
     }
     #home_about {
         display: block;
@@ -517,6 +550,7 @@ form {
         text-align: center;
         padding-bottom: 10px;
         margin-top: .5em;
+        justify-content: center;
     }
     #about_grid h3 {
         font-size: 1.5em;
@@ -525,8 +559,8 @@ form {
         border-radius: 0.3125rem;
     }
     #home_about img {
-        width: 10.125rem;
-        height: 9.625rem;
+      width: 12.125rem;
+      height: 12.625rem;
     }
     #hours_map {
         display: grid;
@@ -550,6 +584,7 @@ form {
     #chefs, #events, #local {
         display:grid;
         grid-template-columns: 1fr 1fr;
+        grid-template-rows: .5fr 1fr;
     }
     #chefs h3, #events h3, #local h3 {
         grid-column:1/2;
@@ -574,7 +609,8 @@ form {
         display: none;
     }
   }
-  @media only screen and (min-width: 770px) {
+  /*******************************************************desktop styles*****/
+  @media only screen and (min-width: 770px)  {
     header {
         width: 58.375rem;
         margin-right: auto;
@@ -583,30 +619,115 @@ form {
     h1 {
         font-size: 2.5em;
     }
+    h1 img {
+      width: 356px;
+      height: 200px;
+      right: 46px;
+    }
     #menu li {
         font-size: 1.5em;
     }
-    img {
-        width: 58.375rem;
-        height: 41.875rem;
+  
+    #large_home_img {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      margin: 0 1em;
+    }
+    #large_home_img h2:first-of-type {
+      display: none;
+    }
+    #menu_button #call_to_orderbtn {
+      position: absolute;
+      top: 14em;
+      left: -17em;
+    }
+    #large_home_img img:first-child {
+      margin:0;
+    }
+    #menu_button {
+      position:relative;
+      display:block;
+    }
+    #menu_button a:first-child {
+      display: inline-flex;
+    }
+
+    #large_home_img h2 {
+      position: absolute;
+      left: 5em;
+      top: 0.5em;
+      color: white;
+      border-radius: 0.625rem;
+      padding: .25em .5em;
+    }
+   
+    #large_home_img a {
+      position: absolute;
+      top: 14em;
+      left: 20em;
+    }
+    #home_about {
+      width:auto;
+      margin: 0 1em;
     }
     #hours_map {
         width: 58.375rem;
     }
     #hours_map img {
         width: 433px;
+    
     }
-    #home_about {
-        width: 58.375rem;
-        /* margin-right: auto;
-        margin-left: auto; */
+    #home_about img {
+      width: 20.125rem;
+      height: 14.625rem;
     }
     /**menu page**/
     table {
         font-size: large;
     }
+    #menu_page img {
+      width: 28.125rem;
+      height: 21.625rem;
+     }
+     #mainentree2 {
+      display:unset; 
+      margin-top: 1em;
+     }
+     #menu_page table {
+      width: 33.375rem;
+     }
+     #menu_page figcaption {
+      width: 22.375rem
+     }
+    #apps, #soups, #salads, #noodles, #curry, #rice, #entree, #desserts, #bevs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 15px;
+      align-items: center;
+    }
+    .menu_grid h3 {
+      grid-column: 1 / 3;
+      margin: 0;
+    }
+    .menu_grid table {
+      grid-column: 2 / 3;
+    }
+    .menu_grid figure {
+      align-content: center;
+      text-align: center;
+      padding: 0 1em
+    }
   }
+   /***** query for scrollbar when screen gets big****/ 
     
-    
+    @media only screen and (min-width: 1400px) {
+      #menu_tags {
+        overflow-x:hidden;
+        justify-content: center;
+      }
+  }
+  
+      
     
 

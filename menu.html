@@ -5,12 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="Seriana Aranki">
         <title>Siam Cuisine | Menu</title>
-        <!-- add a favicon?? 
-            Favicon generated on https://favicon.io with a file/SVG from Font Awesome https://fontawesome.com/v5.15/icons/css3-alt?style=brands -->
-        <!-- <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png"> -->
+     
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon_io (3)/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon_io (3)/favicon-16x16.png">
 
-        
+        <link rel="stylesheet" href="https://use.typekit.net/juz5szq.css">
         <link href="styles.css" rel="stylesheet">
     </head>
     <body>
@@ -29,7 +28,8 @@
                 </ul>
                 </div>
             </nav>
-            <h1><a href="index.html">Siam Cuisine</a></h1>
+            
+            <h1><a href="index.html"><img alt="logo of black elephant holding chopsticks on top of Siam Cuisine restaruant name" src="SeniorProjectImages/SClogo.png"></a></h1>
         </header>
         <main id="menu_page">
             <h2>Menu</h2>
@@ -44,24 +44,22 @@
                 <a href="#desserts">Desserts</a>
                 <a href="#bevs">Beverages</a>
             </div>
-            <section id="apss">
+            
+            <div class="menu_grid">
+                <section id="apps">
                 <h3>Appetizers</h3>
                 <figure>
                     <img src="SeniorProjectImages/eggrolls.jpg" alt="hands carrying a wooden platter of eggrolls">
                 </figure>
                 <table>
                     <tr>
-                        <th>Item</th> <!--can i leave these hidden?-->
+                        <th>Item</th> 
                         <th>Price</th>
                     </tr>
                     <tr>
                         <td>Egg Rolls (Thai Crispy Spring Rolls)</td> 
                         <td>$3.50</td>
-                        <!-- <td>
-                            
-                            <input type="number" id="quantity" name="quantity" min="1" value="1">
-                          
-                        </td> -->
+                       
                     </tr>
                     <tr>
                         <td>Fresh Spring Rolls Chicken or Tofu</td>
@@ -89,6 +87,8 @@
                     </tr>
                 </table>
             </section>
+            </div>
+            <div class="menu_grid">
             <section id="soups">
                 <h3>Soups</h3>
                 <figure>
@@ -99,7 +99,7 @@
                 </figure>
                 <table>
                     <tr>
-                        <th>Item</th> <!--can i leave these hidden?-->
+                        <th>Item</th> 
                         <th>Price</th>
                     </tr>
                     <tr>
@@ -132,6 +132,9 @@
                     </tr>
                 </table>
             </section>
+            </div>
+
+            <div class="menu_grid">
             <section id="salads">
                 <h3>Yum</h3>
                 <figure>
@@ -177,6 +180,9 @@
                     </tr>
                 </table>
             </section>
+            </div>
+
+            <div class="menu_grid">
             <section id="noodles">
                 <h3>Noodles</h3>
                 <figure>
@@ -219,6 +225,9 @@
                     </tr>
                 </table>
             </section>
+            </div>
+
+            <div class="menu_grid">
             <section id="curry">
                 <h3>Curry</h3>
                 <figure>
@@ -257,6 +266,9 @@
                     </tr>
                 </table>
             </section>
+            </div>
+
+            <div class="menu_grid">
             <section id="rice">
                 <h3>Rice Dishes</h3>
                 <figure>
@@ -291,12 +303,17 @@
                     </tr>
                 </table>
             </section>
+            </div>
+
+            <div class="menu_grid">
             <section id="entree">
                     <h3>Main Entree</h3>
                     <figure>
                         <img src="SeniorProjectImages/mainentree.jpg" alt="a plate of fried rice with orange chicken">
+                    
+                        <img id="mainentree2" src="SeniorProjectImages/mainentree2.jpg" alt="black bowl filled with cooked chicken and broccoli, sprinkled with sesame seeds">
                         <figcaption>Add your favorite meats: Chicken or tofu, add $1 pork, add $2 for beef or shrimp.
-                        </figcaption>
+                        </figcaption>  
                     </figure>
                     <table>
                         <tr>
@@ -361,6 +378,9 @@
                         </tr>
                     </table>
             </section>
+            </div>
+
+            <div class="menu_grid">
             <section id="desserts">
                 <h3>Desserts</h3>
                 <figure>
@@ -395,6 +415,9 @@
                     </tr>
                 </table>
             </section>
+            </div>
+
+            <div class="menu_grid">
             <section id="bevs">
                 <h3>Beverages and Beer</h3>
                 <figure>
@@ -447,7 +470,7 @@
                     </tr>
                 </table>
             </section>
-        
+            </div>
         </main>
         <a href="#menu_page" id="backtotop"><svg xmlns="http://www.w3.org/2000/svg" width="574" height="328" viewBox="0 0 574 328" fill="none">
             <path d="M257.848 12.02C265.547 4.32361 275.987 0 286.873 0C297.759 0 308.199 4.32361 315.898 12.02L562.222 258.344C569.7 266.086 573.838 276.457 573.744 287.221C573.651 297.985 569.333 308.282 561.721 315.894C554.11 323.505 543.813 327.823 533.049 327.916C522.284 328.01 511.914 323.872 504.171 316.394L286.873 99.0954L69.5746 316.394C61.8317 323.872 51.4614 328.01 40.6972 327.916C29.933 327.823 19.6362 323.505 12.0244 315.894C4.4127 308.282 0.09509 297.985 0.00155194 287.221C-0.0919861 276.457 4.04603 266.086 11.5243 258.344L257.848 12.02Z" fill="#0D0D0D"/>
@@ -479,6 +502,7 @@
                   </clipPath>
                 </defs>
               </svg>
+              <p><small>This website is for educational purposes</small></p>
         </footer>
     </body>
 </html>
